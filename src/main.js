@@ -8,10 +8,10 @@ import { Doctor } from "./find-a-doctor";
 $(document).ready(function() {
   $("form").submit(function(event) {
     event.preventDefault();
-    // const issue = $("input#issue").val()
+    const issue = $("input#issue").val();
     (async () => {
       let doctor = new Doctor();
-      const response = await doctor.getDoctor();
+      const response = await doctor.getDoctor(issue);
       getElements(response);
     })();
     function getElements(response) {
