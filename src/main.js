@@ -8,23 +8,19 @@ import { Doctor } from "./find-a-doctor";
 $(document).ready(function() {
   $("form").submit(function(event) {
     event.preventDefault();
-    const issue = $("input#issue").val();
+    const name = $("input#issue").val();
     (async () => {
       let doctor = new Doctor();
-      const response = await doctor.getDoctor(issue);
+      const response = await doctor.getDoctor(name);
       getElements(response);
     })();
     function getElements(response) {
-      if(response){
-        $("#doctorName").text(response.data[0].practices[0].name);
-        $("#earthDate").text(response.data);
-        $("#cameraOut").text(response.data);
-        $("#output").show();
-      } else {
-        $("#doctorName").text(`Error in handling request.`);
-        $("#earthDate").text(`Error in handling request.`);
-        $("#cameraOut").text(`Error in handling request.`);
-        $("#output").show();
+      if(response === false){
+        $("#output").text(`error in handling request`);
+      } else if (response.data.length>0) {
+        response.data.forEach(function(response){
+          $("ul#results").append(`<li>${response.profile.first_name} ${response.profile.last_name} ${response.practices[0].visit_address.city} ${response.practices[0].visit_address.state} ${response.practices[0].visit_address.street} ${response.practices[0].visit_address.zip} </li>`);
+        });
       }
     }
 
