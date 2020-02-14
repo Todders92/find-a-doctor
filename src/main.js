@@ -31,16 +31,16 @@ $(document).ready(function() {
     const symptom = $("input#symptom").val();
     (async () => {
       let doctor = new Doctor();
-      const answer = await doctor.getDoctor(name);
+      const answer = await doctor.getSick(symptom);
       getAnswer(answer);
     })();
     function getAnswer(answer) {
       console.log(answer);
       if(answer.data.length === 0) {
-        $("#errorText").text(`No matches found, try another name`);
+        $("#errorSymptom").text(`No matches found, try another name`);
       } else if (answer.data.length>0) {
         answer.data.forEach(function(answer){
-          $("ul#results").append(`<li>${answer.profile.first_name} ${answer.profile.last_name} ${answer.practices[0].visit_address.city} ${answer.practices[0].visit_address.state} ${answer.practices[0].visit_address.street} ${answer.practices[0].visit_address.zip} ${"Phone number:"} ${answer.practices[0].phones[0].number} </li>`);
+          $("ul#symptomResults").append(`<li>${answer.profile.first_name} ${answer.profile.last_name} ${answer.practices[0].visit_address.city} ${answer.practices[0].visit_address.state} ${answer.practices[0].visit_address.street} ${answer.practices[0].visit_address.zip} ${"Phone number:"} ${answer.practices[0].phones[0].number} </li>`);
         });
       }
     }
