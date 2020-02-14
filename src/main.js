@@ -15,14 +15,15 @@ $(document).ready(function() {
       getElements(response);
     })();
     function getElements(response) {
-      if(response === false){
-        $("#output").text(`error in handling request`);
+      console.log(response);
+      if(response.data.length === 0) {
+        $("#errorText").text(`no matches found, try another name`);
       } else if (response.data.length>0) {
         response.data.forEach(function(response){
-          $("ul#results").append(`<li>${response.profile.first_name} ${response.profile.last_name} ${response.practices[0].visit_address.city} ${response.practices[0].visit_address.state} ${response.practices[0].visit_address.street} ${response.practices[0].visit_address.zip} ${"phone number:"} ${response.practices[0].phones[0].number} </li>`);
+          $("ul#results").append(`<li>${response.profile.first_name} ${response.profile.last_name} ${response.practices[0].visit_address.city} ${response.practices[0].visit_address.state} ${response.practices[0].visit_address.street} ${response.practices[0].visit_address.zip} ${"Phone number:"} ${response.practices[0].phones[0].number} </li>`);
         });
       }
     }
-
+    // $("form").hide();
   });
 });
