@@ -24,6 +24,16 @@ _This application allows the user to fill out two forms. One searches for doctor
 
 ## Setup/Installation Requirements
 
+### To properly use this application the user must use their own API key!
+
+#### API Key setup
+* _Navigate to https://developer.betterdoctor.com/_
+* _Follow the instructions on the website to generate your own api key_
+* _navigate to the find-a-doctor directory on your computer using the terminal_
+* _make a .env file in the main directory of find-a-doctor_
+* _open .env in a text edditor (VSCode, Atom, etc._
+* _Paste (API_KEY = {YOUR API KEY HERE})_
+
 #### Node install
 
 #### For macOS:
