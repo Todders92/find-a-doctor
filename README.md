@@ -6,17 +6,20 @@
 
 ## Description
 
-_This application allows the user to input a medical issue they are having and the webpage will return a list of doctors who are qualified to help them. The list of doctors includes information about each doctor including the name, address, phone number, their website, and if they are accepting new patients._
+_This application allows the user to fill out two forms. One searches for doctors by name in the Portland metro area. The other has the user input a symptom/ailment they are suffering from, and show them doctors specializing in the inputted symptom/ailment._
 
 ## Specifications:
 
 | Specification | Example Input | Example Output |
 | ------------- |:-------------:| -------------------:|
-| Webpage allows user to input a medical issue and receive a list of doctors who fit the search query | user inputs toothache | lists all doctors who fit that search query |
-|if the search doesnt yeild any results, to user receives an error|user inputs skdjfsldkjf| no results found, make sure your are inputting a proper search
-| user inputs a name and receives a list of doctors that fits the search query | user inputs 'bob' | lists all doctors named bob |
- if the name query includes any responses, the query should include the doctors first name, last name, address, phone number, website and if they are accepting new patients|user inputs 'bob jones' |search returns bob jones address: 123 fake street, phone number: 555-555-5555 website link: www.{example website here}.com, accepting new patients?: no |
+| User inputs a name and receives a list of doctors that fits the search query in Portland area| user inputs 'bob' | lists all doctors matching bob|
+|If the search doesnt yeild any results, to user receives an error|user inputs skdjfsldkjf| no matches found try another name or search term
+ If the name query includes any responses, the query should include the doctors first name, last name, address, phone number, website and if they are accepting new patients|user inputs 'bob jones' |search returns bob jones address: 123 fake street, phone number: 555-555-5555 website link: www.{example website here}.com, accepting new patients?: no |
+ |Doctor name search form is hidden upon submission|submit:button:click|form:hidden|
+ | Webpage allows user to input a medical issue and receive a list of doctors who fit the search query In Portland area| user inputs toothache | lists all doctors who fit toothache search query from API |
  |if the name query doesnt return any results, the user is notified |user input sdklfjs into name field|I'm sorry, no doctors matching that name were found|
+ If the symptom query includes any responses, the query should include the doctors first name, last name, address, phone number, website, and if they are accepting new patients|user inputs 'bob jones' |search returns bob jones address: 123 fake street, phone number: 555-555-5555 website link: www.{example website here}.com, accepting new patients?: no |
+ |Symptom form is hidden upon submission|submit:button:click|form:hidden|
 
 
 ## Setup/Installation Requirements
