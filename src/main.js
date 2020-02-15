@@ -24,7 +24,8 @@ $(document).ready(function() {
         });
       }
     }
-    // $("form").hide();
+    $("#nameOutput").show();
+    $("form#docNames").hide();
   });
   $("form#sick").submit(function(event) {
     event.preventDefault();
@@ -44,5 +45,7 @@ $(document).ready(function() {
         });
       }
     }
+    $("#sickOutput").show();
+    $("form#sick").hide();
   });
 });
