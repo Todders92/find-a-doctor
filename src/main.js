@@ -38,7 +38,7 @@ $(document).ready(function() {
     function getAnswer(answer) {
       console.log(answer);
       if(answer.data.length === 0) {
-        $("#errorSymptom").text(`No matches found, try another name`);
+        $("#errorSymptom").text(`No matches found, try inputting a different ailement`);
       } else if (answer.data.length>0) {
         answer.data.forEach(function(answer){
           $("ul#symptomResults").append(`<li>${answer.profile.first_name} ${answer.profile.last_name} ${answer.practices[0].visit_address.city} ${answer.practices[0].visit_address.state} ${answer.practices[0].visit_address.street} ${answer.practices[0].visit_address.zip} ${"Phone number:"} ${answer.practices[0].phones[0].number} </li>`);
