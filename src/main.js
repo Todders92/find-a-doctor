@@ -15,7 +15,6 @@ $(document).ready(function() {
       getElements(response);
     })();
     function getElements(response) {
-      console.log(response);
       if(response.data.length === 0) {
         $("#errorText").text(`No matches found, try another name`);
       } else if (response.data.length>0) {
@@ -36,7 +35,6 @@ $(document).ready(function() {
       getAnswer(answer);
     })();
     function getAnswer(answer) {
-      console.log(answer);
       if(answer.data.length === 0) {
         $("#errorSymptom").text(`No matches found, try inputting a different ailement`);
       } else if (answer.data.length>0) {
